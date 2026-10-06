@@ -3,190 +3,525 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0c0b10">
+<meta name="theme-color" content="#0a090e">
 <title>Farouk Grup | بطاقة أعمال</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-/* ... (نفس CSS السابق بدون تغيير) ... */
-:root { --gold: #c9a043; --gold-light: #e2bc6e; --dark-bg: #0c0b10; --card-bg: #0c0b10; --text-light: #f3dfb2; --text-dimmer: #e0d7c2; --text-footer: #7f7a6b; --border-color: rgba(201,160,67,0.2); --btn-bg: #15141f; --btn-border: #2a2838; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { background:#050505; font-family:'Tajawal',sans-serif; display:flex; justify-content:center; align-items:flex-start; min-height:100vh; padding:1rem; }
-.expert-card { max-width:1000px; width:100%; background:var(--card-bg); border-radius:40px; box-shadow:0 10px 20px rgba(0,0,0,0.4), 0 0 0 1px var(--border-color); display:flex; flex-wrap:wrap; overflow:hidden; }
-.image-section { flex:1; min-width:260px; background:#000; position:relative; display:flex; flex-direction:column; }
-.profile-img { width:100%; height:auto; display:block; object-fit:cover; object-position:center 20%; aspect-ratio:3/4; background:#1e1c28; }
-.img-overlay { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top, #000000cc, transparent); padding:1.8rem 1.5rem 1.2rem; text-align:right; }
-.name { font-size:2rem; font-weight:700; color:var(--text-light); line-height:1.2; }
-.name .name-sub { font-size:0.9rem; }
-.title { font-size:0.8rem; color:#e6cfa0; font-weight:400; }
-.content-section { flex:1.3; min-width:280px; padding:2rem; display:flex; flex-direction:column; gap:1.2rem; }
-.lang-switch { display:flex; gap:0.7rem; justify-content:flex-end; flex-wrap:wrap; }
-.lang-btn { background:transparent; border:1px solid rgba(201,160,67,0.5); padding:0.3rem 1.2rem; border-radius:30px; font-weight:400; font-size:0.75rem; color:#e2cf9a; cursor:pointer; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
-.lang-btn.active, .lang-btn:hover { background:var(--gold); color:#0a0a0a; border-color:var(--gold); }
-.bio { font-size:0.9rem; line-height:1.6; color:var(--text-dimmer); border-right:3px solid var(--gold); padding-right:1rem; font-weight:400; }
-.buttons-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; }
-.btn-wide { grid-column:span 2; }
-.btn { background:var(--btn-bg); border:1px solid var(--btn-border); border-radius:50px; padding:0.7rem 1.2rem; text-decoration:none; color:#f5ecd9; font-weight:400; font-size:0.85rem; display:inline-flex; align-items:center; justify-content:center; gap:0.7rem; flex:1 0 auto; cursor:pointer; transition: background 0.2s ease, color 0.2s ease; }
-.btn i { font-size:1rem; color:var(--gold); transition:color 0.2s ease; }
-.btn:hover { background:var(--gold); color:#111; }
-.btn:hover i { color:#111; }
-.btn-consult { background:linear-gradient(105deg, var(--gold), var(--gold-light)); border:none; color:#111; font-weight:700; }
-.btn-consult i { color:#2c2418; }
-#saveContactBtn { background:var(--gold); color:#0a0a0a; border:2px solid var(--gold); font-weight:700; font-size:0.9rem; box-shadow:0 0 12px rgba(201,160,67,0.2); transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; }
-#saveContactBtn:hover { background:var(--gold-light); box-shadow:0 0 20px rgba(201,160,67,0.4); transform:scale(1.02); }
-#saveContactBtn i { color:#0a0a0a; font-size:1.1rem; }
-.footer-note { font-size:0.7rem; color:var(--text-footer); text-align:center; border-top:1px solid var(--border-color); padding-top:1rem; font-weight:400; }
-@media (max-width:780px) { body { padding:8px; } .expert-card { flex-direction:column; border-radius:0; box-shadow:0 5px 15px rgba(0,0,0,0.3); } .image-section { width:100%; min-width:unset; } .profile-img { aspect-ratio:4/3; } .content-section { padding:1rem; } .name { font-size:1.5rem; } .title { font-size:0.7rem; } .bio { font-size:0.8rem; } .buttons-grid { gap:0.5rem; } .btn { padding:0.5rem 0.6rem; font-size:0.75rem; gap:0.4rem; } .btn i { font-size:0.9rem; } #saveContactBtn { font-size:0.8rem; padding:0.55rem 0.7rem; } #saveContactBtn i { font-size:1rem; } .footer-note { font-size:0.65rem; padding-top:0.7rem; } }
-@media (max-width:480px) { .name { font-size:1.3rem; } .title { font-size:0.65rem; } .btn { font-size:0.7rem; padding:0.45rem 0.5rem; } .btn i { font-size:0.85rem; } #saveContactBtn { font-size:0.75rem; padding:0.5rem 0.6rem; } }
+  :root {
+    --gold: #c9a043;
+    --gold-light: #e2bc6e;
+    --gold-soft: rgba(201, 160, 67, 0.15);
+    --bg: #0a090e;
+    --card: #12111a;
+    --text: #f3e9d0;
+    --text-muted: #c9bfa8;
+    --border: rgba(201, 160, 67, 0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Tajawal', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 12px;
+    color: var(--text);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--card);
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,160,67,0.08);
+    overflow: hidden;
+    animation: fadeUp 0.6s ease;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Header / Image */
+  .header {
+    position: relative;
+    padding: 32px 24px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #16151f 0%, var(--card) 100%);
+  }
+
+  .avatar-wrap {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    box-shadow: 0 8px 25px rgba(201,160,67,0.25);
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 3px solid var(--card);
+    display: block;
+  }
+
+  .name {
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  .name-sub {
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .title {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* Language Switch */
+  .lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(201,160,67,0.4);
+    color: var(--gold-light);
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .lang-btn.active,
+  .lang-btn:hover {
+    background: var(--gold);
+    color: #0a090e;
+    border-color: var(--gold);
+  }
+
+  /* Content */
+  .content {
+    padding: 8px 22px 28px;
+  }
+
+  .bio {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 22px;
+    padding: 0 6px;
+  }
+
+  /* Main Actions */
+  .main-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .btn-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.25s;
+  }
+
+  .btn-consult {
+    background: linear-gradient(105deg, var(--gold), var(--gold-light));
+    color: #111;
+  }
+
+  .btn-consult:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201,160,67,0.35);
+  }
+
+  .btn-save {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+  }
+
+  .btn-save:hover {
+    background: var(--gold);
+    color: #111;
+  }
+
+  /* Secondary Links */
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    transition: all 0.2s;
+  }
+
+  .link-item i {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,160,67,0.2);
+    border-radius: 14px;
+    font-size: 1.15rem;
+    color: var(--gold);
+    transition: all 0.2s;
+  }
+
+  .link-item:hover {
+    color: var(--text);
+  }
+
+  .link-item:hover i {
+    background: var(--gold);
+    color: #111;
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  /* QR Section */
+  .qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 18px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 18px;
+    border: 1px solid rgba(201,160,67,0.12);
+    margin-bottom: 18px;
+  }
+
+  .qr-section img {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 6px;
+  }
+
+  .qr-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 0.72rem;
+    color: #7a7466;
+    padding-top: 6px;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 380px) {
+    .name { font-size: 1.5rem; }
+    .links-grid { gap: 8px; }
+    .link-item i { width: 42px; height: 42px; font-size: 1.05rem; }
+  }
 </style>
 </head>
 <body>
-<div class="expert-card">
-  <div class="image-section">
-    <img class="profile-img" src="https://lh3.googleusercontent.com/d/1WPc3zB8JQ_CctYERjApb3EPRLUdMP6Pw=w800-h1000" alt="Farouk Azem" loading="lazy" decoding="async" id="profileImage">
-    <div class="img-overlay">
-      <div class="name">
-        <span class="name-main name-ar">فاروق العظم</span>
-        <span class="name-main name-en" style="display:none;">Farouk Azem</span>
-        <span class="name-sub" id="nameSub">Farouk Azem</span>
+  <div class="card">
+    <!-- Header -->
+    <div class="header">
+      <div class="avatar-wrap">
+        <img class="avatar" src="https://lh3.googleusercontent.com/d/1WPc3zB8JQ_CctYERjApb3EPRLUdMP6Pw=w800-h1000" alt="Farouk Azem" loading="lazy">
       </div>
+      <div class="name">
+        <span class="name-ar">فاروق العظم</span>
+        <span class="name-en" style="display:none;">Farouk Azem</span>
+      </div>
+      <div class="name-sub" id="nameSub">Farouk Azem</div>
       <div class="title" id="titleBlock">مستشار أول - تطوير الأعمال والمالية</div>
+
+      <div class="lang-switch">
+        <button type="button" class="lang-btn active" data-lang="ar">العربية</button>
+        <button type="button" class="lang-btn" data-lang="en">English</button>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <p class="bio" id="bioText">خبير في قطاع الأغذية والمشروبات، الامتياز التجاري وضبط التكاليف. أكثر من 18 عامًا من الخبرة في بناء العلامات وتحقيق النمو المستدام.</p>
+
+      <!-- Main Buttons -->
+      <div class="main-actions">
+        <a href="https://www.farouk-grup.com/consultation.html" target="_blank" rel="noopener" class="btn-main btn-consult">
+          <i class="fas fa-calendar-check"></i>
+          <span id="consultBtn">طلب استشارة</span>
+        </a>
+        <button type="button" class="btn-main btn-save" id="saveContactBtn">
+          <i class="fas fa-address-card"></i>
+          <span id="saveBtn">حفظ جهة الاتصال</span>
+        </button>
+      </div>
+
+      <!-- Secondary Links -->
+      <div class="links-grid">
+        <a href="https://wa.me/905550196682" target="_blank" rel="noopener" class="link-item">
+          <i class="fab fa-whatsapp"></i>
+          <span id="whatsappBtn">واتس آب</span>
+        </a>
+        <a href="https://www.farouk-grup.com/" target="_blank" rel="noopener" class="link-item">
+          <i class="fas fa-globe"></i>
+          <span id="websiteBtn">الموقع</span>
+        </a>
+        <a href="https://training.farouk-grup.com/" target="_blank" rel="noopener" class="link-item">
+          <i class="fas fa-chalkboard-user"></i>
+          <span id="trainingBtn">الدورات</span>
+        </a>
+        <a href="https://www.linkedin.com/in/farouk-azem-856b8a74/" target="_blank" rel="noopener" class="link-item">
+          <i class="fab fa-linkedin-in"></i>
+          <span id="linkedinBtn">لينكدإن</span>
+        </a>
+        <a href="https://www.instagram.com/faroukazem/" target="_blank" rel="noopener" class="link-item">
+          <i class="fab fa-instagram"></i>
+          <span id="instagramBtn">إنستغرام</span>
+        </a>
+        <a href="https://www.tiktok.com/@faroukazem" target="_blank" rel="noopener" class="link-item">
+          <i class="fab fa-tiktok"></i>
+          <span id="tiktokBtn">تيك توك</span>
+        </a>
+        <a href="mailto:faroukgrup@gmail.com" class="link-item">
+          <i class="fas fa-envelope"></i>
+          <span id="emailBtn">البريد</span>
+        </a>
+        <a href="https://www.farouk-grup.com/" target="_blank" rel="noopener" class="link-item" id="shareBtn">
+          <i class="fas fa-share-nodes"></i>
+          <span id="shareLabel">مشاركة</span>
+        </a>
+      </div>
+
+      <!-- QR Code -->
+      <div class="qr-section">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/905550196682&bgcolor=ffffff&color=0a090e" alt="QR Code" loading="lazy">
+        <span class="qr-label" id="qrLabel">امسح للتواصل عبر واتساب</span>
+      </div>
+
+      <div class="footer" id="footerNote">استشارات مالية وتطوير أعمال – خبرة موثوقة</div>
     </div>
   </div>
-  <div class="content-section">
-    <div class="lang-switch">
-      <button type="button" class="lang-btn" data-lang="ar">العربية</button>
-      <button type="button" class="lang-btn" data-lang="en">English</button>
-    </div>
-    <div class="bio" id="bioText">خبير في قطاع الأغذية والمشروبات، الامتياز التجاري وضبط التكاليف. أكثر من 18 عامًا من الخبرة في بناء العلامات وتحقيق النمو المستدام.</div>
-    <div class="buttons-grid">
-      <a class="btn btn-consult" href="https://www.farouk-grup.com/consultation.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-calendar-alt"></i> <span id="consultBtn">طلب استشارة</span></a>
-      <a class="btn" href="https://wa.me/905550196682" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> <span id="whatsappBtn">واتس آب</span></a>
-      <a class="btn" href="https://www.farouk-grup.com/" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i> <span id="websiteBtn">الموقع الرسمي</span></a>
-      <a class="btn" href="https://training.farouk-grup.com/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chalkboard-user"></i> <span id="trainingBtn">الدورات</span></a>
-      <a class="btn" href="https://www.linkedin.com/in/farouk-azem-856b8a74/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i> <span id="linkedinBtn">لينكد إن</span></a>
-      <a class="btn" href="https://www.instagram.com/faroukazem/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> <span id="instagramBtn">إنستغرام</span></a>
-      <a class="btn" href="https://www.tiktok.com/@faroukazem" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> <span id="tiktokBtn">تيك توك</span></a>
-      <a class="btn" href="mailto:faroukgrup@gmail.com"><i class="fas fa-envelope"></i> <span id="emailBtn">البريد</span></a>
-      <button type="button" class="btn btn-wide" id="saveContactBtn" aria-label="حفظ جهة الاتصال"><i class="fas fa-address-card"></i> <span id="saveBtn">حفظ جهة الاتصال</span></button>
-    </div>
-    <div class="footer-note" id="footerNote">استشارات مالية وتطوير أعمال – خبرة موثوقة</div>
-  </div>
-</div>
 
 <script>
-// vCard 2.1 – الأكثر قبولًا
-function generateVCard21(lang) {
-  const phone = "+905550196682";
-  const email = "faroukgrup@gmail.com";
-  const website = "https://www.farouk-grup.com";
-  const company = "Farouk Grup";
+  // ===== vCard =====
+  function generateVCard(lang) {
+    const phone = "+905550196682";
+    const email = "faroukgrup@gmail.com";
+    const website = "https://www.farouk-grup.com";
+    const company = "Farouk Grup";
+    let fn, n, title, note;
 
-  let fn, n, title, note;
-  if (lang === "ar") {
-    fn = "فاروق العظم";
-    n = "العظم;فاروق;;;";
-    title = "مستشار أول - تطوير الأعمال والمالية";
-    note = "استشارات مالية وتطوير أعمال";
-  } else {
-    fn = "Farouk Azem";
-    n = "Azem;Farouk;;;";
-    title = "Senior Consultant – Business & Financial Development";
-    note = "F&B Financial & Business Development Consultant";
+    if (lang === "ar") {
+      fn = "فاروق العظم";
+      n = "العظم;فاروق;;;";
+      title = "مستشار أول - تطوير الأعمال والمالية";
+      note = "استشارات مالية وتطوير أعمال";
+    } else {
+      fn = "Farouk Azem";
+      n = "Azem;Farouk;;;";
+      title = "Senior Consultant – Business & Financial Development";
+      note = "F&B Financial & Business Development Consultant";
+    }
+
+    let vcard = "BEGIN:VCARD\r\nVERSION:3.0\r\n";
+    vcard += `FN:${fn}\r\n`;
+    vcard += `N:${n}\r\n`;
+    vcard += `ORG:${company}\r\n`;
+    vcard += `TITLE:${title}\r\n`;
+    vcard += `NOTE:${note}\r\n`;
+    vcard += `TEL;TYPE=CELL:${phone}\r\n`;
+    vcard += `EMAIL;TYPE=WORK:${email}\r\n`;
+    vcard += `URL:${website}\r\n`;
+    vcard += "END:VCARD\r\n";
+    return vcard;
   }
 
-  // vCard 2.1
-  let vcard = "BEGIN:VCARD\r\n";
-  vcard += "VERSION:2.1\r\n";
-  vcard += `FN:${fn}\r\n`;
-  vcard += `N:${n}\r\n`;
-  vcard += `ORG:${company}\r\n`;
-  vcard += `TITLE:${title}\r\n`;
-  vcard += `NOTE:${note}\r\n`;
-  vcard += `TEL;CELL:${phone}\r\n`;
-  vcard += `EMAIL;WORK:${email}\r\n`;
-  vcard += `URL;WORK:${website}\r\n`;
-  vcard += "END:VCARD\r\n";
-  return vcard;
-}
+  function downloadVCard() {
+    const vcardData = generateVCard(currentLanguage);
+    const blob = new Blob([vcardData], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Farouk_Azem.vcf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
 
-function downloadVCard() {
-  const lang = currentLanguage;
-  const vcardData = generateVCard21(lang);
-  // استخدام data URI مباشرة (ليس blob)
-  const dataUri = "data:text/x-vcard;charset=utf-8," + encodeURIComponent("\uFEFF" + vcardData);
-  const a = document.createElement("a");
-  a.href = dataUri;
-  a.download = "Farouk_Azem.vcf";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
+  // ===== Translations =====
+  const translations = {
+    ar: {
+      title: "مستشار أول - تطوير الأعمال والمالية",
+      bio: "خبير في قطاع الأغذية والمشروبات، الامتياز التجاري وضبط التكاليف. أكثر من 18 عامًا من الخبرة في بناء العلامات وتحقيق النمو المستدام.",
+      consult: "طلب استشارة",
+      save: "حفظ جهة الاتصال",
+      whatsapp: "واتس آب",
+      website: "الموقع",
+      training: "الدورات",
+      linkedin: "لينكدإن",
+      instagram: "إنستغرام",
+      tiktok: "تيك توك",
+      email: "البريد",
+      share: "مشاركة",
+      qr: "امسح للتواصل عبر واتساب",
+      footer: "استشارات مالية وتطوير أعمال – خبرة موثوقة"
+    },
+    en: {
+      title: "Senior Consultant – Business & Financial Development",
+      bio: "F&B Financial & Business Development Consultant | Franchise & Cost Control Specialist with +18 years of experience.",
+      consult: "Book Consultation",
+      save: "Save Contact",
+      whatsapp: "WhatsApp",
+      website: "Website",
+      training: "Courses",
+      linkedin: "LinkedIn",
+      instagram: "Instagram",
+      tiktok: "TikTok",
+      email: "Email",
+      share: "Share",
+      qr: "Scan to chat on WhatsApp",
+      footer: "Financial consulting & business development – Trusted expertise"
+    }
+  };
 
-// زر احتياطي: نسخ النص للصقه في جهات الاتصال
-function copyVCardText() {
-  const lang = currentLanguage;
-  const vcardData = generateVCard21(lang);
-  navigator.clipboard.writeText(vcardData).then(() => {
-    alert("تم نسخ بيانات جهة الاتصال. يمكنك لصقها في تطبيق جهات الاتصال (استيراد من الحافظة).");
-  }).catch(() => {
-    prompt("انسخ النص التالي يدويًا:", vcardData);
+  let currentLanguage = "ar";
+
+  const nameAr = document.querySelector(".name-ar");
+  const nameEn = document.querySelector(".name-en");
+  const nameSub = document.getElementById("nameSub");
+  const titleEl = document.getElementById("titleBlock");
+  const bioEl = document.getElementById("bioText");
+  const consultBtn = document.getElementById("consultBtn");
+  const saveBtn = document.getElementById("saveBtn");
+  const whatsappBtn = document.getElementById("whatsappBtn");
+  const websiteBtn = document.getElementById("websiteBtn");
+  const trainingBtn = document.getElementById("trainingBtn");
+  const linkedinBtn = document.getElementById("linkedinBtn");
+  const instagramBtn = document.getElementById("instagramBtn");
+  const tiktokBtn = document.getElementById("tiktokBtn");
+  const emailBtn = document.getElementById("emailBtn");
+  const shareLabel = document.getElementById("shareLabel");
+  const qrLabel = document.getElementById("qrLabel");
+  const footerNote = document.getElementById("footerNote");
+  const langBtns = document.querySelectorAll(".lang-btn");
+
+  function setLanguage(lang) {
+    currentLanguage = lang;
+    const t = translations[lang];
+
+    if (lang === "ar") {
+      nameAr.style.display = "";
+      nameEn.style.display = "none";
+      nameSub.textContent = "Farouk Azem";
+      document.documentElement.dir = "rtl";
+      document.documentElement.lang = "ar";
+    } else {
+      nameAr.style.display = "none";
+      nameEn.style.display = "";
+      nameSub.textContent = "فاروق العظم";
+      document.documentElement.dir = "ltr";
+      document.documentElement.lang = "en";
+    }
+
+    titleEl.textContent = t.title;
+    bioEl.textContent = t.bio;
+    consultBtn.textContent = t.consult;
+    saveBtn.textContent = t.save;
+    whatsappBtn.textContent = t.whatsapp;
+    websiteBtn.textContent = t.website;
+    trainingBtn.textContent = t.training;
+    linkedinBtn.textContent = t.linkedin;
+    instagramBtn.textContent = t.instagram;
+    tiktokBtn.textContent = t.tiktok;
+    emailBtn.textContent = t.email;
+    shareLabel.textContent = t.share;
+    qrLabel.textContent = t.qr;
+    footerNote.textContent = t.footer;
+
+    langBtns.forEach(btn => btn.classList.toggle("active", btn.dataset.lang === lang));
+  }
+
+  langBtns.forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
   });
-}
 
-// الترجمة
-const translations = {
-  ar: { title: "مستشار أول - تطوير الأعمال والمالية", bio: "مستشار تطوير الأعمال والمالية لقطاع الأغذية والمشروبات | خبير الامتياز التجاري وضبط التكاليف", consult: "طلب استشارة", whatsapp: "واتس آب", website: "الموقع الرسمي", training: "الدورات", linkedin: "لينكد إن", instagram: "إنستغرام", tiktok: "تيك توك", email: "البريد", save: "حفظ جهة الاتصال", footer: "استشارات مالية وتطوير أعمال – خبرة موثوقة" },
-  en: { title: "Senior Consultant – Business & Financial Development", bio: "F&B Financial & Business Development Consultant | Franchise & Cost Control Specialist", consult: "Book Consultation", whatsapp: "WhatsApp", website: "Official Website", training: "Courses", linkedin: "LinkedIn", instagram: "Instagram", tiktok: "TikTok", email: "Email", save: "Save Contact", footer: "Financial consulting & business development – Trusted expertise" }
-};
+  // Save Contact
+  document.getElementById("saveContactBtn").addEventListener("click", downloadVCard);
 
-let currentLanguage = "ar";
-const nameArEl = document.querySelector(".name-ar");
-const nameEnEl = document.querySelector(".name-en");
-const nameSubEl = document.getElementById("nameSub");
-const titleEl = document.getElementById("titleBlock");
-const bioEl = document.getElementById("bioText");
-const consultBtnEl = document.getElementById("consultBtn");
-const whatsappBtnEl = document.getElementById("whatsappBtn");
-const websiteBtnEl = document.getElementById("websiteBtn");
-const trainingBtnEl = document.getElementById("trainingBtn");
-const linkedinBtnEl = document.getElementById("linkedinBtn");
-const instagramBtnEl = document.getElementById("instagramBtn");
-const tiktokBtnEl = document.getElementById("tiktokBtn");
-const emailBtnEl = document.getElementById("emailBtn");
-const saveBtnEl = document.getElementById("saveBtn");
-const footerNoteEl = document.getElementById("footerNote");
-const langBtns = document.querySelectorAll(".lang-btn");
+  // Share (Web Share API)
+  document.getElementById("shareBtn").addEventListener("click", async (e) => {
+    e.preventDefault();
+    const shareData = {
+      title: currentLanguage === "ar" ? "فاروق العظم | Farouk Grup" : "Farouk Azem | Farouk Grup",
+      text: currentLanguage === "ar" 
+        ? "مستشار أول في تطوير الأعمال والمالية - قطاع الأغذية والمشروبات"
+        : "Senior Consultant – Business & Financial Development",
+      url: "https://www.farouk-grup.com/"
+    };
 
-function setLanguage(lang) {
-  currentLanguage = lang;
-  const t = translations[lang];
-  if (!t) return;
-  if (lang === "ar") { nameArEl.style.display = ""; nameEnEl.style.display = "none"; nameSubEl.innerText = "Farouk Azem"; }
-  else { nameArEl.style.display = "none"; nameEnEl.style.display = ""; nameSubEl.innerText = "فاروق العظم"; }
-  titleEl.innerText = t.title; bioEl.innerText = t.bio;
-  consultBtnEl.innerText = t.consult; whatsappBtnEl.innerText = t.whatsapp;
-  websiteBtnEl.innerText = t.website; trainingBtnEl.innerText = t.training;
-  linkedinBtnEl.innerText = t.linkedin; instagramBtnEl.innerText = t.instagram;
-  tiktokBtnEl.innerText = t.tiktok; emailBtnEl.innerText = t.email;
-  saveBtnEl.innerText = t.save; footerNoteEl.innerText = t.footer;
-  document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-  document.documentElement.setAttribute("lang", lang);
-  langBtns.forEach(btn => btn.classList.toggle("active", btn.dataset.lang === lang));
-}
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {}
+    } else {
+      // Fallback: copy link
+      navigator.clipboard.writeText(shareData.url).then(() => {
+        alert(currentLanguage === "ar" ? "تم نسخ الرابط" : "Link copied");
+      });
+    }
+  });
 
-langBtns.forEach(btn => btn.addEventListener("click", () => setLanguage(btn.dataset.lang)));
-
-// زر الحفظ الرئيسي: يحاول التحميل، ولو فشل ينسخ النص
-document.getElementById("saveContactBtn").addEventListener("click", function() {
-  try {
-    downloadVCard();
-  } catch(e) {
-    copyVCardText();
-  }
-});
-
-setLanguage("ar");
+  // Init
+  setLanguage("ar");
 </script>
 </body>
 </html>
